@@ -7,6 +7,8 @@ public class Menü {
     protected String error;
     protected String success;
     protected String prompt;
+    protected String language;
+    protected String wasserstatus;
 
     public void drawMenü() {
         System.out.println("");

@@ -1,23 +1,24 @@
 public class Beet {
 
     protected int points; //für Form des Beets?
-    protected String name;
+    protected int beetnummer; //Bezeichner
     protected int wasserstand;
 
     public Beet() {
 
         points = 0;
-        name = "unnamed";
+        beetnummer = -1;
         wasserstand = 0;
 
     }
 
-    public Beet(String n, int p, int w) {
+    public Beet(int n, int p, int w) {
 
         points = p;
-        name = n;
+        beetnummer = n;
         wasserstand = w;
 
     }
 
-}
+    }
+
