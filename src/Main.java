@@ -7,7 +7,7 @@ public class Main {
 // Programm zeigt ein Menü, nimmt Input vom User, und zeigt dann entweder Menü oder beendet.
         // v2 erzeugt noch Beete und zeigt ihren Status per Menüeintrag
         //v3 lagert das Hauptmenü in eigene Klasse aus und fügt eine englische Version hinzu
-        //v3.2 hat Simons Verbesserungen (außer switch statement)
+        //v3.2 hat Simons Verbesserungen (außer switch statement) und ist wieder public in Github
 
         Main Maino = new Main(); //Objekt für alle methods in Main, die ich aus main aus benutze - kann methods damit unten in diese datei mit reinschreiben
         Menü menuEnglish;
