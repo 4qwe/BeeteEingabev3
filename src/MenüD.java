@@ -1,7 +1,7 @@
 public class MenüD extends Menü {
 
     MenüD() {
-         ueberschrift = "--- HAUPTMENÜ LOL ---";
+        ueberschrift = "--- HAUPTMENÜ LOL ---";
         eins = "s - Status";
         zwei = "b - Beenden";
         drei = "9 - Sprache wechseln";
@@ -9,7 +9,8 @@ public class MenüD extends Menü {
         success = "Danke, auf Wiedersehn!";
         prompt = "Triff eine Eingabe: ";
         language = "DE";
-        wasserstatus = "Beet %d hat %d%% Wasser";
+        wasserstatus = "Das Beet Nr. %1$d hat %2$d%% Wasser";
     }
+
 
 }

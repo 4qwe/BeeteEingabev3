@@ -9,10 +9,9 @@ public class Main {
         //v3 lagert das Hauptmenü in eigene Klasse aus und fügt eine englische Version hinzu
         //v3.2 hat Simons Verbesserungen (außer switch statement) und ist wieder public in Github
 
-        Main Maino = new Main(); //Objekt für alle methods in Main, die ich aus main aus benutze - kann methods damit unten in diese datei mit reinschreiben
-        Menü menuEnglish;
-        menuEnglish = new MenüE();
-        Menü menuGerman = new MenüD();
+        Menü menuEnglish = new MenüE();
+        Menü menuGerman = new MenüD(); //Dies erstellt das Menü-Objekt menuGerman und weist ihm die Referenz zu auf ein neu zu erstellendes Objekt
+        // mittels des Konstruktors von *MenüD*
 
         Beet[] plots = new Beet[5]; //Das Beetearray hat Platz für max. 5 Beete/Pflanzplots
 
@@ -24,8 +23,9 @@ public class Main {
             System.out.println("Beet Nr. " + (i + 1) + " hat Wasserstand " + rando);
         }
 
-        Menü m1;    //Dies erstellt das aktuell zu verwendende Menü-Objekt
-        m1 = menuEnglish;
+
+        Menü m1 = menuGerman;   //Dies erstellt das aktuell zu verwendende Menü-Objekt m1 und richtet die Referenz auf das vormals erstellte deutsche
+        //MenüD-Objekt ein
 
         Scanner s1; //Ich erstelle ein Objekt für den zukünftigen Input des Users
         s1 = new Scanner(System.in);
@@ -39,9 +39,10 @@ public class Main {
             if (txt1.equals("b")) {
                 System.out.println(m1.success);
                 break;
-            } else if (txt1.equals("s")) {
+            }
+            else if (txt1.equals("s")) {
                 for (int i = 0; i < plots.length; i++) {
-                    System.out.println(String.format(m1.wasserstatus,plots[i].beetnummer,plots[i].wasserstand)); //wie den string iwie transparenter bauen? so schon optimal?
+                    System.out.println(m1.getLocaString(plots[i].beetnummer, plots[i].wasserstand));
                 }
             } else if (txt1.equals("9")) {
                 if (m1.language.equals("DE")) {

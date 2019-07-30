@@ -19,4 +19,10 @@ public class Menü {
         System.out.println(drei);
         System.out.println("");
     }
+
+    public String getLocaString(int a, int b) {
+        String s = String.format(wasserstatus, a, b) ;
+        return s;
+    }
+
 }

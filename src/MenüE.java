@@ -9,7 +9,6 @@ public class MenüE extends Menü {
         success = "Thank you. Good bye!";
         prompt = "Make a selection: ";
         language = "EN";
-        wasserstatus = "Plot No. %d ist at %d%%";
+        wasserstatus = "Plot %1$d is at %2$d%%";
     }
-
 }

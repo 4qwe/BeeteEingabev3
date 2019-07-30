@@ -7,7 +7,7 @@ public class Beet {
     public Beet() {
 
         points = 0;
-        beetnummer = -1;
+        beetnummer = 0;
         wasserstand = 0;
 
     }
@@ -19,6 +19,6 @@ public class Beet {
         wasserstand = w;
 
     }
-
     }
+
 
