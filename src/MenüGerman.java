@@ -10,6 +10,6 @@ public class MenüGerman extends Menü implements IMenü {
         success = "Danke, auf Wiedersehn!";
         prompt = "Triff eine Eingabe: ";
         language = "DE";
-        wasserstatus = "Beetnummer %d mit Status %d%%";
+        wasserstatus = "Beetnummer %1$s mit Wasser %2$s%%";
     }
 }

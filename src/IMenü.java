@@ -5,7 +5,7 @@ public interface IMenü {
 
     void drawMenü(); //Interface erkennt dass die Subklasse die Methode ererbt!
 
-    void wasserAusgabe(int wasserStatus, int beetNummer);
+    void wasserAusgabe(Beet beet);
 
     void prompt();
 

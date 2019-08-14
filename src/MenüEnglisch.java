@@ -10,11 +10,7 @@ public class MenüEnglisch extends Menü implements IMenü {
         success = "Thank you. Good bye!";
         prompt = "Select your choice ";
         language = "EN";
-        wasserstatus = "Water is at %d%% for plot No. %d";
-    }
-
-    public void wasserAusgabe(int wasserStatus, int beetNummer) {
-        System.out.println(String.format(wasserstatus, wasserStatus, beetNummer));
+        wasserstatus = "Water is at %2$s%% for plot No %1$s";
     }
 
 }

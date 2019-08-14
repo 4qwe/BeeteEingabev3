@@ -9,9 +9,16 @@ public class Main {
         //v3.2 hat Simons Verbesserungen (außer switch statement) und ist wieder public in Github
         //v3.3 benutzt ein Interface zusätzlich zu den Subclasses für die lokalisierten Menüs, um Parameter in einem unspezifizierten Menüobjekt
         // benutzen zu können
+        //v3.4 arbeitet direkt mit dem beet-Objekt innerhalb der methode die den wasserstatus-string berechnet
+
+        Menü menüGerman = new MenüGerman();
+
+        IMenü menu2 = (IMenü) menüGerman;
+
+        Menü blah = (Menü) menu2;
 
         IMenü englischesMenu = new MenüEnglisch(); //Dies erstellt ein MenüInterface-Objekt und weist ihm die Referenz zu auf ein neu zu
-        // erstellendes Objekts mittels des Konstruktors der Klasse
+        // erstellendes Objekt mittels des Konstruktors der Klasse
 
         IMenü deutschesMenu;
         deutschesMenu = new MenüGerman();
@@ -43,7 +50,7 @@ public class Main {
             }
             else if (txt1.equals("s")) {
                 for (int i = 0; i < plots.length; i++) {
-                    aktuellesMenü.wasserAusgabe(plots[i].wasserstand, plots[i].beetnummer);
+                    aktuellesMenü.wasserAusgabe(plots[i]);
                 }
             }
             else if (txt1.equals("9")) {

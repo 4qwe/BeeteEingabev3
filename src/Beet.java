@@ -19,6 +19,14 @@ public class Beet {
         wasserstand = w;
 
     }
+
+    public int getWasserstand() {
+        return wasserstand;
+    }
+
+    public int getBeetnummer() {
+        return beetnummer;
+    }
 }
 
 

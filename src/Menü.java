@@ -22,9 +22,8 @@ public class Menü {
 
     }
 
-    public void wasserAusgabe(int wasserStatus, int beetNummer) {
-        System.out.println(String.format(wasserstatus, beetNummer, wasserStatus)); //wenn sich die Reihenfolge der Parameter ändern soll, muss die
-        // lokalisierte Subklasse die Methode eben überschreiben :/
+    public void wasserAusgabe(Beet beet) {
+        System.out.println(String.format(wasserstatus, beet.getBeetnummer(), beet.getWasserstand()));
     }
 
 
