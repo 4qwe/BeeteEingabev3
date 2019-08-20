@@ -10,6 +10,7 @@ public class Menü {
     protected String language;
     protected String wasserstatus;
 
+
     public void drawMenü() {
 
         System.out.println("");
@@ -22,10 +23,18 @@ public class Menü {
 
     }
 
-    public void wasserAusgabe(Beet beet) {
-        System.out.println(String.format(wasserstatus, beet.getBeetnummer(), beet.getWasserstand()));
+    public String wasserAusgabe(Beet beet) {
+        int num = beet.beetnummer;
+        int stand = beet.wasserstand;
+        switch (language) {
+            case "DE":
+                return String.format(wasserstatus, num, stand);
+            case "EN":
+                return String.format(wasserstatus, stand, num);
+            default:
+                return String.format(wasserstatus, num, stand);
+        }
     }
-
 
     public void prompt() {
         System.out.println(prompt);

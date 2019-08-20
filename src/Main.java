@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class Main {
 
+
+    public static void resolve(int Nr, int Ws) {
+        System.out.println("hahah");
+    }
+
     public static void main(String[] args) {
 // Programm zeigt ein Menü, nimmt Input vom User, und zeigt dann entweder Menü oder beendet.
         // v2 erzeugt noch Beete und zeigt ihren Status per Menüeintrag
@@ -9,13 +14,7 @@ public class Main {
         //v3.2 hat Simons Verbesserungen (außer switch statement) und ist wieder public in Github
         //v3.3 benutzt ein Interface zusätzlich zu den Subclasses für die lokalisierten Menüs, um Parameter in einem unspezifizierten Menüobjekt
         // benutzen zu können
-        //v3.4 arbeitet direkt mit dem beet-Objekt innerhalb der methode die den wasserstatus-string berechnet
-
-        Menü menüGerman = new MenüGerman();
-
-        IMenü menu2 = (IMenü) menüGerman;
-
-        Menü blah = (Menü) menu2;
+        //v3.4 arbeitet direkt mit dem beet-Objekt innerhalb der methode die den wasserstatus-string berechnet, beinhaltet switch statement
 
         IMenü englischesMenu = new MenüEnglisch(); //Dies erstellt ein MenüInterface-Objekt und weist ihm die Referenz zu auf ein neu zu
         // erstellendes Objekt mittels des Konstruktors der Klasse
@@ -39,8 +38,10 @@ public class Main {
         s1 = new Scanner(System.in);
 
         while (true) {
+
             aktuellesMenü.drawMenü(); //Hauptmenü anzeigen
             aktuellesMenü.prompt();
+
             String txt1;
             txt1 = s1.next(); //txt1 speichert hier den Input vom User
 
@@ -50,7 +51,7 @@ public class Main {
             }
             else if (txt1.equals("s")) {
                 for (int i = 0; i < plots.length; i++) {
-                    aktuellesMenü.wasserAusgabe(plots[i]);
+                    System.out.println(aktuellesMenü.wasserAusgabe(plots[i]));
                 }
             }
             else if (txt1.equals("9")) {
@@ -68,7 +69,9 @@ public class Main {
 
         } //loopt zurück zum while-start
 
+
     } //ende main u anfang Main
+
 
 }
 
