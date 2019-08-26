@@ -1,5 +1,3 @@
-import com.sun.xml.internal.ws.addressing.WsaActionUtil;
-
 public class MenüEnglisch extends Menü implements IMenü {
 
     public MenüEnglisch() {
@@ -14,5 +12,6 @@ public class MenüEnglisch extends Menü implements IMenü {
         language = "EN";
         wasserstatus = "Water is at %d for plot No %d";
     }
+
 
 }

@@ -27,8 +27,6 @@ public class Menü {
         int num = beet.beetnummer;
         int stand = beet.wasserstand;
         switch (language) {
-            case "DE":
-                return String.format(wasserstatus, num, stand);
             case "EN":
                 return String.format(wasserstatus, stand, num);
             default:

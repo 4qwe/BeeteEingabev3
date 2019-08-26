@@ -1,13 +1,9 @@
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class Main {
 
-
-    public static void resolve(int Nr, int Ws) {
-        System.out.println("hahah");
-    }
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 // Programm zeigt ein Menü, nimmt Input vom User, und zeigt dann entweder Menü oder beendet.
         // v2 erzeugt noch Beete und zeigt ihren Status per Menüeintrag
         //v3 lagert das Hauptmenü in eigene Klasse aus und fügt eine englische Version hinzu
@@ -21,10 +17,14 @@ public class Main {
 
         IMenü deutschesMenu;
         deutschesMenu = new MenüGerman();
-
         IMenü aktuellesMenü = deutschesMenu; //Dies richtet die Referenz eines weiteren MenüInterface auf eines der beiden bereits erstelllten ein
 
-        Beet[] plots = new Beet[5]; //Das Beetearray hat Platz für max. 5 Beete/Pflanzplots
+        FileReader fromFile = new FileReader("db.properties"); //lädt Inhalt des property file in FileReader Objekt
+        Properties BeeteProperties = new Properties();
+        BeeteProperties.load(fromFile); //benutzt Properties-Methode um Hashtable aus FileReader Objekt zu erstellen
+
+        int wievielBeete = Integer.parseInt(BeeteProperties.getProperty("anzahl")); //hier "fehlt" exception handling für String ist kein Int
+        Beet[] plots = new Beet[wievielBeete]; //Das Beetearray hat Platz für 'Anzahl' Beete/Pflanzplots
 
         for (int i = 0; i < plots.length;
             i++) {   //Ich erstelle 5 Beetobjekte und versehe sie mit random Wasserstand
