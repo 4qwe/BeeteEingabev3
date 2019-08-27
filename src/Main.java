@@ -3,7 +3,8 @@ import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)
+        throws java.io.IOException {  //IOException möglich aus Properties.load beim Bespielen des Hashtables mit dem FileReader-Objekt
 // Programm zeigt ein Menü, nimmt Input vom User, und zeigt dann entweder Menü oder beendet.
         // v2 erzeugt noch Beete und zeigt ihren Status per Menüeintrag
         //v3 lagert das Hauptmenü in eigene Klasse aus und fügt eine englische Version hinzu
@@ -11,6 +12,8 @@ public class Main {
         //v3.3 benutzt ein Interface zusätzlich zu den Subclasses für die lokalisierten Menüs, um Parameter in einem unspezifizierten Menüobjekt
         // benutzen zu können
         //v3.4 arbeitet direkt mit dem beet-Objekt innerhalb der methode die den wasserstatus-string berechnet, beinhaltet switch statement
+        //v3.5 Properties File
+        //v3.6 mit exception handling (nur pro forma)
 
         IMenü englischesMenu = new MenüEnglisch(); //Dies erstellt ein MenüInterface-Objekt und weist ihm die Referenz zu auf ein neu zu
         // erstellendes Objekt mittels des Konstruktors der Klasse
@@ -19,15 +22,23 @@ public class Main {
         deutschesMenu = new MenüGerman();
         IMenü aktuellesMenü = deutschesMenu; //Dies richtet die Referenz eines weiteren MenüInterface auf eines der beiden bereits erstelllten ein
 
-        FileReader fromFile = new FileReader("db.properties"); //lädt Inhalt des property file in FileReader Objekt
+        FileReader fromFile = null;
+
+        try {
+            fromFile = new FileReader("db.properties"); //lädt Inhalt des property file in FileReader Objekt
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("FileReader kann mit dieser Datei kein Objekt initialisieren. StackTrace folgt ");
+            e.printStackTrace();
+        }
+
         Properties BeeteProperties = new Properties();
         BeeteProperties.load(fromFile); //benutzt Properties-Methode um Hashtable aus FileReader Objekt zu erstellen
 
         int wievielBeete = Integer.parseInt(BeeteProperties.getProperty("anzahl")); //hier "fehlt" exception handling für String ist kein Int
-        Beet[] plots = new Beet[wievielBeete]; //Das Beetearray hat Platz für 'Anzahl' Beete/Pflanzplots
+        Beet[] plots = new Beet[wievielBeete]; //Das Beetearray hat Platz für 'Anzahl' Beete/ bzw. Pflanzplots
 
-        for (int i = 0; i < plots.length;
-            i++) {   //Ich erstelle 5 Beetobjekte und versehe sie mit random Wasserstand
+        for (int i = 0; i < plots.length; i++) {   //Ich erstelle 5 Beetobjekte und versehe sie mit random Wasserstand
             int rando = (int) (Math.random() * 100 + 1); //Hier habe ich gecastet!
             System.out.println(rando);
             plots[i] = new Beet(i + 1, -1, rando);
@@ -35,7 +46,9 @@ public class Main {
         }
 
         Scanner s1; //Ich erstelle ein Objekt für den zukünftigen Input des Users
-        s1 = new Scanner(System.in);
+        s1 = new
+
+            Scanner(System.in);
 
         while (true) {
 
