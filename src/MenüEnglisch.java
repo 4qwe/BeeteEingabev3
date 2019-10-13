@@ -5,7 +5,8 @@ public class MenüEnglisch extends Menü implements IMenü {
         ueberschrift = "--- MAIN MENU ---";
         eins = "s - Status";
         zwei = "b - Quit";
-        drei = "9 - Change Language";
+        drei = "t - Print plot shapes";
+        vier = "9 - Change Language";
         error = "Try again.";
         success = "Thank you. Good bye!";
         prompt = "Select your choice ";

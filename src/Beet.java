@@ -1,20 +1,14 @@
 public class Beet {
 
-    protected int points; //für Form des Beets?
+    protected String points; //für Form des Beets?
+    protected int[] pos; //position der Form
     protected int beetnummer; //Bezeichner
     protected int wasserstand;
 
-    public Beet() {
-
-        points = 0;
-        beetnummer = 0;
-        wasserstand = 0;
-
-    }
-
-    public Beet(int n, int p, int w) {
+    public Beet(int n, String p, int[] po, int w) {
 
         points = p;
+        pos  = po;
         beetnummer = n;
         wasserstand = w;
 
@@ -28,5 +22,3 @@ public class Beet {
         return beetnummer;
     }
 }
-
-

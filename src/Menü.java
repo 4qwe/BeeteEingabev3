@@ -4,6 +4,7 @@ public class Menü {
     protected String eins;
     protected String zwei;
     protected String drei;
+    protected String vier;
     protected String error;
     protected String success;
     protected String prompt;
@@ -19,6 +20,7 @@ public class Menü {
         System.out.println(eins);
         System.out.println(zwei);
         System.out.println(drei);
+        System.out.println(vier);
         System.out.println("");
 
     }
@@ -52,6 +54,4 @@ public class Menü {
         return boo;
     }
 
-
 }
-

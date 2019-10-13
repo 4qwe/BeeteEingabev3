@@ -15,5 +15,4 @@ public interface IMenü {
 
     boolean gerCheck();
 
-
 }
