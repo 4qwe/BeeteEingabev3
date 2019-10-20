@@ -1,3 +1,5 @@
+import beete.*;
+
 public class Menü {
 
     protected String ueberschrift;
@@ -10,6 +12,8 @@ public class Menü {
     protected String prompt;
     protected String language;
     protected String wasserstatus;
+    protected String plots_printed;
+    protected String prompt_file;
 
 
     public void drawMenü() {
@@ -26,8 +30,8 @@ public class Menü {
     }
 
     public String wasserAusgabe(Beet beet) {
-        int num = beet.beetnummer;
-        int stand = beet.wasserstand;
+        int num = beet.getBeetnummer();
+        int stand = beet.getWasserstand();
         switch (language) {
             case "EN":
                 return String.format(wasserstatus, stand, num);
@@ -44,7 +48,6 @@ public class Menü {
         System.out.println(success);
     }
 
-
     public void promptFail() {
         System.out.println(error);
     }
@@ -54,4 +57,11 @@ public class Menü {
         return boo;
     }
 
+    public void promptFile() {
+        System.out.println(prompt_file);
+    }
+
+    public void plotsPrinted(String o) {
+        System.out.printf(plots_printed, o);
+    }
 }

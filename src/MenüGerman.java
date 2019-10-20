@@ -1,4 +1,4 @@
-public class MenüGerman extends Menü implements IMenü {
+public class MenüGerman extends Menü implements MenüInterface {
 
     public MenüGerman() {
 
@@ -12,6 +12,8 @@ public class MenüGerman extends Menü implements IMenü {
         prompt = "Triff eine Eingabe: ";
         language = "DE";
         wasserstatus = "Beetnummer %d mit Wasser %d";
+        plots_printed = "Plots ausgegeben in %s%n"; ;
+        prompt_file = "Filename endend auf .svg bitte: ";
     }
 
 
